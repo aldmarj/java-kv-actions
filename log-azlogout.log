@@ -1,0 +1,132 @@
+14:32:08.342 [main] ERROR org.springframework.boot.SpringApplication -- Application run failed
+java.lang.IllegalStateException: Failed to configure KeyVault property source 'azure-key-vault-secret-property-source-0'
+        at com.azure.spring.cloud.autoconfigure.implementation.keyvault.environment.KeyVaultEnvironmentPostProcessor.buildKeyVaultPropertySource(KeyVaultEnvironmentPostProcessor.java:146)
+        at com.azure.spring.cloud.autoconfigure.implementation.keyvault.environment.KeyVaultEnvironmentPostProcessor.buildKeyVaultPropertySourceList(KeyVaultEnvironmentPostProcessor.java:130)       
+        at com.azure.spring.cloud.autoconfigure.implementation.keyvault.environment.KeyVaultEnvironmentPostProcessor.postProcessEnvironment(KeyVaultEnvironmentPostProcessor.java:93)
+        at org.springframework.boot.env.EnvironmentPostProcessorApplicationListener.onApplicationEnvironmentPreparedEvent(EnvironmentPostProcessorApplicationListener.java:109)
+        at org.springframework.boot.env.EnvironmentPostProcessorApplicationListener.onApplicationEvent(EnvironmentPostProcessorApplicationListener.java:94)
+        at org.springframework.context.event.SimpleApplicationEventMulticaster.doInvokeListener(SimpleApplicationEventMulticaster.java:185)
+        at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:178)
+        at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:156)
+        at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:138)
+        at org.springframework.boot.context.event.EventPublishingRunListener.multicastInitialEvent(EventPublishingRunListener.java:136)
+        at org.springframework.boot.context.event.EventPublishingRunListener.environmentPrepared(EventPublishingRunListener.java:81)
+        at org.springframework.boot.SpringApplicationRunListeners.lambda$environmentPrepared$2(SpringApplicationRunListeners.java:64)
+        at java.base/java.lang.Iterable.forEach(Iterable.java:75)
+        at org.springframework.boot.SpringApplicationRunListeners.doWithListeners(SpringApplicationRunListeners.java:118)
+        at org.springframework.boot.SpringApplicationRunListeners.doWithListeners(SpringApplicationRunListeners.java:112)
+        at org.springframework.boot.SpringApplicationRunListeners.environmentPrepared(SpringApplicationRunListeners.java:63)
+        at org.springframework.boot.SpringApplication.prepareEnvironment(SpringApplication.java:370)
+        at org.springframework.boot.SpringApplication.run(SpringApplication.java:330)
+        at org.springframework.boot.SpringApplication.run(SpringApplication.java:1363)
+        at org.springframework.boot.SpringApplication.run(SpringApplication.java:1352)
+        at com.example.kv_demo.KeyvaultApplication.main(KeyvaultApplication.java:16)
+Caused by: com.azure.identity.CredentialUnavailableException: EnvironmentCredential authentication unavailable. Environment variables are not fully configured.To mitigate this issue, please refer to the troubleshooting guidelines here at https://aka.ms/azsdk/java/identity/environmentcredential/troubleshoot
+WorkloadIdentityCredential authentication unavailable. The workload options are not fully configured. See the troubleshooting guide for more information. https://aka.ms/azsdk/java/identity/workloadidentitycredential/troubleshoot
+Managed Identity authentication is not available.
+SharedTokenCacheCredential authentication unavailable. No accounts were found in the cache.
+IntelliJ Authentication not available. Please log in with Azure Tools for IntelliJ plugin in the IDE. Fore more details refer to the troubleshooting guidelines here at https://aka.ms/azsdk/java/identity/intellijcredential/troubleshoot
+AzureCliCredential authentication unavailable. Please run 'az login' to set up account. To further mitigate this issue, please refer to the troubleshooting guidelines here at https://aka.ms/azsdk/java/identity/azclicredential/troubleshoot
+Azure PowerShell authentication failed using defaultpowershell(pwsh) with following error: PowerShell command failure.
+Azure PowerShell authentication failed using powershell-core(powershell) with following error: Encountered error when deserializing response from Azure Power Shell.
+AzureDeveloperCliCredential authentication unavailable. Please run 'azd auth login' to set up account.To mitigate this issue, please refer to the troubleshooting guidelines here at https://aka.ms/azure-identity-java-default-azure-credential-troubleshoot
+        at com.azure.identity.ChainedTokenCredential.getTokenSync(ChainedTokenCredential.java:166)
+        at com.azure.core.implementation.AccessTokenCache.lambda$new$2(AccessTokenCache.java:65)
+        at com.azure.core.implementation.AccessTokenCache.lambda$retrieveTokenSync$11(AccessTokenCache.java:230)
+        at com.azure.core.implementation.AccessTokenCache.getTokenSync(AccessTokenCache.java:93)
+        at com.azure.core.http.policy.BearerTokenAuthenticationPolicy.setAuthorizationHeaderHelperSync(BearerTokenAuthenticationPolicy.java:194)
+        at com.azure.core.http.policy.BearerTokenAuthenticationPolicy.setAuthorizationHeaderSync(BearerTokenAuthenticationPolicy.java:181)
+        at com.azure.security.keyvault.secrets.implementation.KeyVaultCredentialPolicy.authorizeRequestSync(KeyVaultCredentialPolicy.java:227)
+        at com.azure.core.http.policy.BearerTokenAuthenticationPolicy.processSync(BearerTokenAuthenticationPolicy.java:148)
+        at com.azure.core.http.HttpPipelineNextSyncPolicy.processSync(HttpPipelineNextSyncPolicy.java:53)
+        at com.azure.core.http.policy.RetryPolicy.attemptSync(RetryPolicy.java:217)
+        at com.azure.core.http.policy.RetryPolicy.attemptSync(RetryPolicy.java:233)
+        at com.azure.core.http.policy.RetryPolicy.attemptSync(RetryPolicy.java:233)
+        at com.azure.core.http.policy.RetryPolicy.attemptSync(RetryPolicy.java:233)
+        at com.azure.core.http.policy.RetryPolicy.processSync(RetryPolicy.java:161)
+        at com.azure.core.http.HttpPipelineNextSyncPolicy.processSync(HttpPipelineNextSyncPolicy.java:53)
+        at com.azure.core.http.policy.AddHeadersPolicy.processSync(AddHeadersPolicy.java:66)
+        at com.azure.core.http.HttpPipelineNextSyncPolicy.processSync(HttpPipelineNextSyncPolicy.java:53)
+        at com.azure.core.http.policy.HttpPipelineSyncPolicy.processSync(HttpPipelineSyncPolicy.java:51)
+        at com.azure.core.http.policy.UserAgentPolicy.processSync(UserAgentPolicy.java:174)
+        at com.azure.core.http.HttpPipelineNextSyncPolicy.processSync(HttpPipelineNextSyncPolicy.java:53)
+        at com.azure.core.http.HttpPipeline.sendSync(HttpPipeline.java:138)
+        at com.azure.core.implementation.http.rest.SyncRestProxy.send(SyncRestProxy.java:62)
+        at com.azure.core.implementation.http.rest.SyncRestProxy.invoke(SyncRestProxy.java:83)
+        at com.azure.core.implementation.http.rest.RestProxyBase.invoke(RestProxyBase.java:124)
+        at com.azure.core.http.rest.RestProxy.invoke(RestProxy.java:95)
+        at jdk.proxy2/jdk.proxy2.$Proxy11.getSecretsSync(Unknown Source)
+        at com.azure.security.keyvault.secrets.implementation.SecretClientImpl.getSecretsSinglePage(SecretClientImpl.java:1313)
+        at com.azure.security.keyvault.secrets.SecretClient.lambda$listPropertiesOfSecrets$16(SecretClient.java:870)
+        at com.azure.core.http.rest.PagedIterable.lambda$new$5(PagedIterable.java:193)
+        at com.azure.core.util.paging.ContinuablePagedByIteratorBase.requestPage(ContinuablePagedByIteratorBase.java:104)
+        at com.azure.core.util.paging.ContinuablePagedByPageIterable$ContinuablePagedByPageIterator.<init>(ContinuablePagedByPageIterable.java:82)
+        at com.azure.core.util.paging.ContinuablePagedByPageIterable.iterator(ContinuablePagedByPageIterable.java:58)
+        at java.base/java.lang.Iterable.spliterator(Iterable.java:101)
+        at com.azure.spring.cloud.autoconfigure.implementation.keyvault.environment.KeyVaultOperation.lambda$listSecrets$0(KeyVaultOperation.java:49)
+        at java.base/java.util.Optional.map(Optional.java:260)
+        at com.azure.spring.cloud.autoconfigure.implementation.keyvault.environment.KeyVaultOperation.listSecrets(KeyVaultOperation.java:49)
+        at com.azure.spring.cloud.autoconfigure.implementation.keyvault.environment.KeyVaultPropertySource.loadProperties(KeyVaultPropertySource.java:77)
+        at com.azure.spring.cloud.autoconfigure.implementation.keyvault.environment.KeyVaultPropertySource.<init>(KeyVaultPropertySource.java:71)
+        at com.azure.spring.cloud.autoconfigure.implementation.keyvault.environment.KeyVaultEnvironmentPostProcessor.buildKeyVaultPropertySource(KeyVaultEnvironmentPostProcessor.java:144)
+        ... 20 common frames omitted
+        Suppressed: com.azure.identity.CredentialUnavailableException: EnvironmentCredential authentication unavailable. Environment variables are not fully configured.To mitigate this issue, please refer to the troubleshooting guidelines here at https://aka.ms/azsdk/java/identity/environmentcredential/troubleshoot
+WorkloadIdentityCredential authentication unavailable. The workload options are not fully configured. See the troubleshooting guide for more information. https://aka.ms/azsdk/java/identity/workloadidentitycredential/troubleshoot
+Managed Identity authentication is not available.
+SharedTokenCacheCredential authentication unavailable. No accounts were found in the cache.
+IntelliJ Authentication not available. Please log in with Azure Tools for IntelliJ plugin in the IDE. Fore more details refer to the troubleshooting guidelines here at https://aka.ms/azsdk/java/identity/intellijcredential/troubleshoot
+AzureCliCredential authentication unavailable. Please run 'az login' to set up account. To further mitigate this issue, please refer to the troubleshooting guidelines here at https://aka.ms/azsdk/java/identity/azclicredential/troubleshoot
+Azure PowerShell authentication failed using defaultpowershell(pwsh) with following error: PowerShell command failure.
+Azure PowerShell authentication failed using powershell-core(powershell) with following error: Encountered error when deserializing response from Azure Power Shell.
+AzureDeveloperCliCredential authentication unavailable. Please run 'azd auth login' to set up account.To mitigate this issue, please refer to the troubleshooting guidelines here at https://aka.ms/azure-identity-java-default-azure-credential-troubleshoot
+                at com.azure.identity.ChainedTokenCredential.getTokenSync(ChainedTokenCredential.java:166)
+                at com.azure.core.implementation.AccessTokenCache.lambda$new$2(AccessTokenCache.java:65)
+                at com.azure.core.implementation.AccessTokenCache.lambda$retrieveTokenSync$11(AccessTokenCache.java:230)
+                at com.azure.core.implementation.AccessTokenCache.getTokenSync(AccessTokenCache.java:93)
+                at com.azure.core.http.policy.BearerTokenAuthenticationPolicy.setAuthorizationHeaderHelperSync(BearerTokenAuthenticationPolicy.java:194)
+                at com.azure.core.http.policy.BearerTokenAuthenticationPolicy.setAuthorizationHeaderSync(BearerTokenAuthenticationPolicy.java:181)
+                at com.azure.security.keyvault.secrets.implementation.KeyVaultCredentialPolicy.authorizeRequestOnChallengeSync(KeyVaultCredentialPolicy.java:314)
+                at com.azure.core.http.policy.BearerTokenAuthenticationPolicy.processSync(BearerTokenAuthenticationPolicy.java:152)
+                at com.azure.core.http.HttpPipelineNextSyncPolicy.processSync(HttpPipelineNextSyncPolicy.java:53)
+                at com.azure.core.http.policy.RetryPolicy.attemptSync(RetryPolicy.java:217)
+                ... 46 common frames omitted
+        Suppressed: com.azure.identity.CredentialUnavailableException: EnvironmentCredential authentication unavailable. Environment variables are not fully configured.To mitigate this issue, please refer to the troubleshooting guidelines here at https://aka.ms/azsdk/java/identity/environmentcredential/troubleshoot
+WorkloadIdentityCredential authentication unavailable. The workload options are not fully configured. See the troubleshooting guide for more information. https://aka.ms/azsdk/java/identity/workloadidentitycredential/troubleshoot
+Managed Identity authentication is not available.
+SharedTokenCacheCredential authentication unavailable. No accounts were found in the cache.
+IntelliJ Authentication not available. Please log in with Azure Tools for IntelliJ plugin in the IDE. Fore more details refer to the troubleshooting guidelines here at https://aka.ms/azsdk/java/identity/intellijcredential/troubleshoot
+AzureCliCredential authentication unavailable. Please run 'az login' to set up account. To further mitigate this issue, please refer to the troubleshooting guidelines here at https://aka.ms/azsdk/java/identity/azclicredential/troubleshoot
+Azure PowerShell authentication failed using defaultpowershell(pwsh) with following error: PowerShell command failure.
+Azure PowerShell authentication failed using powershell-core(powershell) with following error: Encountered error when deserializing response from Azure Power Shell.
+AzureDeveloperCliCredential authentication unavailable. Please run 'azd auth login' to set up account.To mitigate this issue, please refer to the troubleshooting guidelines here at https://aka.ms/azure-identity-java-default-azure-credential-troubleshoot
+                at com.azure.identity.ChainedTokenCredential.getTokenSync(ChainedTokenCredential.java:166)
+                at com.azure.core.implementation.AccessTokenCache.lambda$new$2(AccessTokenCache.java:65)
+                at com.azure.core.implementation.AccessTokenCache.lambda$retrieveTokenSync$11(AccessTokenCache.java:230)
+                at com.azure.core.implementation.AccessTokenCache.getTokenSync(AccessTokenCache.java:93)
+                at com.azure.core.http.policy.BearerTokenAuthenticationPolicy.setAuthorizationHeaderHelperSync(BearerTokenAuthenticationPolicy.java:194)
+                at com.azure.core.http.policy.BearerTokenAuthenticationPolicy.setAuthorizationHeaderSync(BearerTokenAuthenticationPolicy.java:181)
+                at com.azure.security.keyvault.secrets.implementation.KeyVaultCredentialPolicy.authorizeRequestSync(KeyVaultCredentialPolicy.java:227)
+                at com.azure.core.http.policy.BearerTokenAuthenticationPolicy.processSync(BearerTokenAuthenticationPolicy.java:148)
+                at com.azure.core.http.HttpPipelineNextSyncPolicy.processSync(HttpPipelineNextSyncPolicy.java:53)
+                at com.azure.core.http.policy.RetryPolicy.attemptSync(RetryPolicy.java:217)
+                ... 47 common frames omitted
+        Suppressed: com.azure.identity.CredentialUnavailableException: EnvironmentCredential authentication unavailable. Environment variables are not fully configured.To mitigate this issue, please refer to the troubleshooting guidelines here at https://aka.ms/azsdk/java/identity/environmentcredential/troubleshoot
+WorkloadIdentityCredential authentication unavailable. The workload options are not fully configured. See the troubleshooting guide for more information. https://aka.ms/azsdk/java/identity/workloadidentitycredential/troubleshoot
+Managed Identity authentication is not available.
+SharedTokenCacheCredential authentication unavailable. No accounts were found in the cache.
+IntelliJ Authentication not available. Please log in with Azure Tools for IntelliJ plugin in the IDE. Fore more details refer to the troubleshooting guidelines here at https://aka.ms/azsdk/java/identity/intellijcredential/troubleshoot
+AzureCliCredential authentication unavailable. Please run 'az login' to set up account. To further mitigate this issue, please refer to the troubleshooting guidelines here at https://aka.ms/azsdk/java/identity/azclicredential/troubleshoot
+Azure PowerShell authentication failed using defaultpowershell(pwsh) with following error: PowerShell command failure.
+Azure PowerShell authentication failed using powershell-core(powershell) with following error: Encountered error when deserializing response from Azure Power Shell.
+AzureDeveloperCliCredential authentication unavailable. Please run 'azd auth login' to set up account.To mitigate this issue, please refer to the troubleshooting guidelines here at https://aka.ms/azure-identity-java-default-azure-credential-troubleshoot
+                at com.azure.identity.ChainedTokenCredential.getTokenSync(ChainedTokenCredential.java:166)
+                at com.azure.core.implementation.AccessTokenCache.lambda$new$2(AccessTokenCache.java:65)
+                at com.azure.core.implementation.AccessTokenCache.lambda$retrieveTokenSync$11(AccessTokenCache.java:230)
+                at com.azure.core.implementation.AccessTokenCache.getTokenSync(AccessTokenCache.java:93)
+                at com.azure.core.http.policy.BearerTokenAuthenticationPolicy.setAuthorizationHeaderHelperSync(BearerTokenAuthenticationPolicy.java:194)
+                at com.azure.core.http.policy.BearerTokenAuthenticationPolicy.setAuthorizationHeaderSync(BearerTokenAuthenticationPolicy.java:181)
+                at com.azure.security.keyvault.secrets.implementation.KeyVaultCredentialPolicy.authorizeRequestSync(KeyVaultCredentialPolicy.java:227)
+                at com.azure.core.http.policy.BearerTokenAuthenticationPolicy.processSync(BearerTokenAuthenticationPolicy.java:148)
+                at com.azure.core.http.HttpPipelineNextSyncPolicy.processSync(HttpPipelineNextSyncPolicy.java:53)
+                at com.azure.core.http.policy.RetryPolicy.attemptSync(RetryPolicy.java:217)
+                ... 48 common frames omitted
