@@ -1,0 +1,43 @@
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.3.5)
+
+2024-10-30T14:38:08.971-05:00  INFO 35984 --- [kv-demo] [           main] c.example.kv_demo.KeyvaultApplication    : Starting KeyvaultApplication using Java 17.0.3 with PID 35984 (C:\Users\ajoubert\OneDrive - Microsoft\Desktop\kv-demo\target\classes started by ajoubert in C:\Users\ajoubert\OneDrive - Microsoft\Desktop\kv-demo)
+2024-10-30T14:38:08.977-05:00  INFO 35984 --- [kv-demo] [           main] c.example.kv_demo.KeyvaultApplication    : No active profile set, falling back to 1 default profile: "default"
+2024-10-30T14:38:09.603-05:00  INFO 35984 --- [kv-demo] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-10-30T14:38:09.699-05:00  INFO 35984 --- [kv-demo] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 83 ms. Found 1 JPA repository interface.
+2024-10-30T14:38:10.369-05:00  INFO 35984 --- [kv-demo] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-10-30T14:38:10.383-05:00  INFO 35984 --- [kv-demo] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-10-30T14:38:10.384-05:00  INFO 35984 --- [kv-demo] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.31]
+2024-10-30T14:38:10.465-05:00  INFO 35984 --- [kv-demo] [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-10-30T14:38:10.466-05:00  INFO 35984 --- [kv-demo] [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1439 ms
+2024-10-30T14:38:10.585-05:00  INFO 35984 --- [kv-demo] [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-10-30T14:38:10.627-05:00  INFO 35984 --- [kv-demo] [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.3.Final
+2024-10-30T14:38:10.652-05:00  INFO 35984 --- [kv-demo] [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-10-30T14:38:10.871-05:00  INFO 35984 --- [kv-demo] [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-10-30T14:38:10.896-05:00  INFO 35984 --- [kv-demo] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-10-30T14:38:11.064-05:00  INFO 35984 --- [kv-demo] [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:~/testdb user=SA
+2024-10-30T14:38:11.066-05:00  INFO 35984 --- [kv-demo] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-10-30T14:38:11.086-05:00  WARN 35984 --- [kv-demo] [           main] org.hibernate.orm.deprecation            : HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-10-30T14:38:11.789-05:00  INFO 35984 --- [kv-demo] [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-10-30T14:38:11.802-05:00 DEBUG 35984 --- [kv-demo] [           main] org.hibernate.SQL                        : drop table if exists todo cascade 
+2024-10-30T14:38:11.809-05:00 DEBUG 35984 --- [kv-demo] [           main] org.hibernate.SQL                        : drop sequence if exists todo_seq
+2024-10-30T14:38:11.816-05:00 DEBUG 35984 --- [kv-demo] [           main] org.hibernate.SQL                        : create sequence todo_seq start with 1 increment by 50
+2024-10-30T14:38:11.822-05:00 DEBUG 35984 --- [kv-demo] [           main] org.hibernate.SQL                        : create table todo (done boolean not null, id bigint not null, description varchar(255), details varchar(255), primary key (id))
+2024-10-30T14:38:11.834-05:00  INFO 35984 --- [kv-demo] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-10-30T14:38:12.074-05:00  WARN 35984 --- [kv-demo] [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-10-30T14:38:12.398-05:00  INFO 35984 --- [kv-demo] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2024-10-30T14:38:12.416-05:00  INFO 35984 --- [kv-demo] [           main] c.example.kv_demo.KeyvaultApplication    : Started KeyvaultApplication in 11.395 seconds (process running for 11.929)
+2024-10-30T14:38:12.456-05:00 DEBUG 35984 --- [kv-demo] [           main] org.hibernate.SQL                        : select next value for todo_seq
+2024-10-30T14:38:12.565-05:00 DEBUG 35984 --- [kv-demo] [           main] org.hibernate.SQL                        : select next value for todo_seq
+2024-10-30T14:38:12.598-05:00 DEBUG 35984 --- [kv-demo] [           main] org.hibernate.SQL                        : insert into todo (description,details,done,id) values (?,?,?,?)
+2024-10-30T14:38:12.605-05:00 DEBUG 35984 --- [kv-demo] [           main] org.hibernate.SQL                        : insert into todo (description,details,done,id) values (?,?,?,?)
+2024-10-30T14:38:12.608-05:00 DEBUG 35984 --- [kv-demo] [           main] org.hibernate.SQL                        : insert into todo (description,details,done,id) values (?,?,?,?)
+com.example.kv_demo.Todo@27103726
+com.example.kv_demo.Todo@7d2c9b65
+com.example.kv_demo.Todo@6ca6cc1c

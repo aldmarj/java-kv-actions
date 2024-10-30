@@ -8,10 +8,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.GeneratedValue;
 
-import org.springframework.boot.autoconfigure.SpringBootApplication;
-
 @Entity
-@SpringBootApplication
 public class Todo {
 
     public Todo() {
