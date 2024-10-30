@@ -22,12 +22,17 @@ jobs:
           java-version: '17'
           distribution: 'microsoft'
           
-      - name: Login to Azure
+      - name: Azure Login
         uses: azure/login@v2
         with:
-          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_96E70587BE7E4626ADA40B1827CC6A71 }}
-          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_F0B0459E36DA4CFDACA4E42EDD9B27E8 }}
-          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_7D857C90B9EA42059C0CCFBF8BE5AE9E }}
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+
+      - name: Azure CLI script
+        uses: azure/cli@v2
+        with:
+          azcliversion: latest
+          inlineScript: |
+            az account show
 
       - name: Build with Maven
         run: mvn clean install
