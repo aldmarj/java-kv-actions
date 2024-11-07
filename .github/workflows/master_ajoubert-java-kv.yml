@@ -27,6 +27,12 @@ jobs:
         with:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
 
+      - name: pwd & ls
+        run: |
+            echo 'pwd && ls' &&
+            pwd && 
+            ls
+
       - name: Azure CLI script
         uses: azure/cli@v2
         with:
