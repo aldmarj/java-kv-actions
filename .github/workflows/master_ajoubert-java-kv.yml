@@ -37,6 +37,14 @@ jobs:
         run: |
            cat pom.xml
 
+      - name: chmod pom.xml
+        run: |
+           chmod 700 pom.xml
+           
+      - name: cat pom.xml 2
+        run: |
+           cat pom.xml
+
       - name: Azure CLI script
         uses: azure/cli@v2
         with:
