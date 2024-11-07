@@ -33,6 +33,10 @@ jobs:
             pwd
             ls
 
+      - name: cat pom.xml
+        run: |
+           cat pom.xml
+
       - name: Azure CLI script
         uses: azure/cli@v2
         with:
