@@ -29,8 +29,8 @@ jobs:
 
       - name: pwd & ls
         run: |
-            echo 'pwd && ls' &&
-            pwd && 
+            echo "pwd && ls"
+            pwd
             ls
 
       - name: Azure CLI script
