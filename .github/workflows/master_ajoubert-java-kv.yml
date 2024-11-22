@@ -22,28 +22,16 @@ jobs:
           java-version: '17'
           distribution: 'microsoft'
           
-      - name: Azure Login
-        uses: azure/login@v2
+      # - name: Azure Login
+      #   uses: azure/login@v2
+      #   with:
+      #     creds: ${{ secrets.AZURE_CREDENTIALS }}
+
+      - uses: Azure/login@v1
         with:
-          creds: ${{ secrets.AZURE_CREDENTIALS }}
-
-      - name: pwd & ls
-        run: |
-            echo "pwd && ls"
-            pwd
-            ls
-
-      - name: cat pom.xml
-        run: |
-           cat pom.xml
-
-      - name: chmod pom.xml
-        run: |
-           chmod 700 pom.xml
-           
-      - name: cat pom.xml 2
-        run: |
-           cat pom.xml
+            client-id: ${{ secrets.AZURE_CLIENT_ID }}
+            tenant-id: ${{ secrets.AZURE_TENANT_ID }}
+            subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
 
       - name: Azure CLI script
         uses: azure/cli@v2
