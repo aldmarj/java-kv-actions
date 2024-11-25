@@ -25,6 +25,11 @@ jobs:
         with:
           java-version: '17'
           distribution: 'microsoft'
+
+      - name: Setup Maven Action
+        uses: s4u/setup-maven-action@3.9.9
+
+      - run: mvn -V 
           
       # - name: Azure Login
       #   uses: azure/login@v2
