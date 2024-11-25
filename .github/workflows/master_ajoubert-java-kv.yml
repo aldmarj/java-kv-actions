@@ -18,6 +18,8 @@ jobs:
     runs-on: self-hosted
 
     steps:
+       # Install azure-cli
+      - uses: elstudio/action-install-azure-cli@v1
       - uses: actions/checkout@v4
 
       - name: Set up Java version
