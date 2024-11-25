@@ -1,0 +1,46 @@
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.3.5)
+
+2024-10-30T20:30:34.489Z  INFO 1898 --- [kv-demo] [           main] c.e.kv_demo.KvDemoApplicationTests       : Starting KvDemoApplicationTests using Java 17.0.10 with PID 1898 (started by runner in /home/runner/work/java-kv-actions/java-kv-actions)
+2024-10-30T20:30:34.491Z  INFO 1898 --- [kv-demo] [           main] c.e.kv_demo.KvDemoApplicationTests       : No active profile set, falling back to 1 default profile: "default"
+2024-10-30T20:30:35.306Z  INFO 1898 --- [kv-demo] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-10-30T20:30:35.355Z  INFO 1898 --- [kv-demo] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 43 ms. Found 1 JPA repository interface.
+2024-10-30T20:30:35.869Z  INFO 1898 --- [kv-demo] [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-10-30T20:30:35.914Z  INFO 1898 --- [kv-demo] [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.3.Final
+2024-10-30T20:30:35.944Z  INFO 1898 --- [kv-demo] [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-10-30T20:30:36.221Z  INFO 1898 --- [kv-demo] [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-10-30T20:30:36.246Z  INFO 1898 --- [kv-demo] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-10-30T20:30:36.440Z  INFO 1898 --- [kv-demo] [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:~/testdb user=SA
+2024-10-30T20:30:36.442Z  INFO 1898 --- [kv-demo] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-10-30T20:30:36.474Z  WARN 1898 --- [kv-demo] [           main] org.hibernate.orm.deprecation            : HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-10-30T20:30:37.259Z  INFO 1898 --- [kv-demo] [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-10-30T20:30:37.279Z DEBUG 1898 --- [kv-demo] [           main] org.hibernate.SQL                        : drop table if exists todo cascade 
+2024-10-30T20:30:37.283Z DEBUG 1898 --- [kv-demo] [           main] org.hibernate.SQL                        : drop sequence if exists todo_seq
+2024-10-30T20:30:37.290Z DEBUG 1898 --- [kv-demo] [           main] org.hibernate.SQL                        : create sequence todo_seq start with 1 increment by 50
+2024-10-30T20:30:37.296Z DEBUG 1898 --- [kv-demo] [           main] org.hibernate.SQL                        : create table todo (done boolean not null, id bigint not null, description varchar(255), details varchar(255), primary key (id))
+2024-10-30T20:30:37.305Z  INFO 1898 --- [kv-demo] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-10-30T20:30:37.658Z  WARN 1898 --- [kv-demo] [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-10-30T20:30:38.157Z  INFO 1898 --- [kv-demo] [           main] c.e.kv_demo.KvDemoApplicationTests       : Started KvDemoApplicationTests in 11.593 seconds (process running for 12.873)
+2024-10-30T20:30:38.176Z DEBUG 1898 --- [kv-demo] [           main] org.hibernate.SQL                        : select next value for todo_seq
+2024-10-30T20:30:38.217Z DEBUG 1898 --- [kv-demo] [           main] org.hibernate.SQL                        : select next value for todo_seq
+2024-10-30T20:30:38.234Z DEBUG 1898 --- [kv-demo] [           main] org.hibernate.SQL                        : insert into todo (description,details,done,id) values (?,?,?,?)
+2024-10-30T20:30:38.238Z DEBUG 1898 --- [kv-demo] [           main] org.hibernate.SQL                        : insert into todo (description,details,done,id) values (?,?,?,?)
+2024-10-30T20:30:38.238Z DEBUG 1898 --- [kv-demo] [           main] org.hibernate.SQL                        : insert into todo (description,details,done,id) values (?,?,?,?)
+com.example.kv_demo.Todo@1d07d728
+com.example.kv_demo.Todo@23cf78f9
+com.example.kv_demo.Todo@7655dc27
+OpenJDK 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 12.87 s -- in com.example.kv_demo.KvDemoApplicationTests
+2024-10-30T20:30:38.940Z  INFO 1898 --- [kv-demo] [ionShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-10-30T20:30:38.941Z DEBUG 1898 --- [kv-demo] [ionShutdownHook] org.hibernate.SQL                        : drop table if exists todo cascade 
+2024-10-30T20:30:38.943Z DEBUG 1898 --- [kv-demo] [ionShutdownHook] org.hibernate.SQL                        : drop sequence if exists todo_seq
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
