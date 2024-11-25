@@ -47,7 +47,7 @@ jobs:
       #       az account show
 
       - name: Build with Maven
-        run: ./mvnw clean install
+        run: chmod 777 mvnw && ./mvnw clean install
 
 
 
