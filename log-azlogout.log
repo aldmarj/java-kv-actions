@@ -1,3 +1,5 @@
+hello
+
 14:32:08.342 [main] ERROR org.springframework.boot.SpringApplication -- Application run failed
 java.lang.IllegalStateException: Failed to configure KeyVault property source 'azure-key-vault-secret-property-source-0'
         at com.azure.spring.cloud.autoconfigure.implementation.keyvault.environment.KeyVaultEnvironmentPostProcessor.buildKeyVaultPropertySource(KeyVaultEnvironmentPostProcessor.java:146)
